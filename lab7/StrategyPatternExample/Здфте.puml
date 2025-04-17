@@ -1,0 +1,29 @@
+@startuml
+
+interface PrintingStrategy {
+    +print(): void
+}
+
+
+class TextPrintingStrategy implements PrintingStrategy {
+    +print(): void
+}
+
+class PhotoPrintingStrategy implements PrintingStrategy {
+    +print(): void
+}
+
+class ThreeDPrintingStrategy implements PrintingStrategy {
+    +print(): void
+}
+
+
+class Printer {
+    -strategy: PrintingStrategy
+    +setStrategy(strategy: PrintingStrategy): void
+    +executePrinting(): void
+}
+
+
+Printer o-- PrintingStrategy
+@enduml
